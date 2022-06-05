@@ -43,6 +43,12 @@ class Test {
         $console->newline();
         $console->line('line(): Hello World!');
 
+        $console->warn('This is a warning!');
+        $console->error('This is an error!');
+        $console->debug('This is a debug message!');
+        $console->debugComment('This is a debug comment!');
+
+
         $console->newline();
     }
 

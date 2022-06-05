@@ -27,6 +27,63 @@ class Console
         return $this;
     }
 
+    public function info(string $message): self
+    {
+        $this->line(sprintf('%s%s%s: %s',
+                $this->gray('['),
+                $this->green('Info'),
+                $this->gray(']'),
+                $message)
+        );
+        return $this;
+    }
+
+    public function warn(string $message): self
+    {
+        $this->line(sprintf("%s%s%s: %s",
+            $this->gray('['),
+            $this->yellow('Warning'),
+            $this->gray(']'),
+            $message)
+        );
+
+        return $this;
+    }
+
+    public function error(string $message): self
+    {
+        $this->line(sprintf("%s%s%s: %s",
+            $this->gray('['),
+            $this->red('Error'),
+            $this->gray(']'),
+            $message)
+        );
+
+        return $this;
+    }
+
+    public function debug(string $message): self
+    {
+        $this->line(sprintf("%s%s%s: %s",
+            $this->gray('['),
+            $this->lightGray('Debug'),
+            $this->gray(']'),
+            $message)
+        );
+
+        return $this;
+    }
+
+    public function debugComment(string $message): self
+    {
+        $this->line(sprintf("%s%s",
+            $this->gray(' > '),
+            $this->lightGray($message))
+        );
+
+        return $this;
+    }
+
     /**
      * Automatically format a log message.
      * Example: 'Info: Hello World!' becomes '[Info]: Hello World!' with colors.
