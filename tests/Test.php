@@ -5,6 +5,7 @@ use Desilva\Console\Console;
 
 require_once '../src/ColoredOutput.php';
 require_once '../src/Console.php';
+require_once '../src/FormatsAnsiString.php';
 
 class Test {
     use ColoredOutput;
@@ -44,7 +45,19 @@ class Test {
 
         $console->newline();
     }
+
+    public function testFormatsAnsiString(): void
+    {
+        $console = new Console();
+        $console->line('Testing FormatsAnsiString...');
+
+        $console->format('Info: Info');
+        $console->format('Warning: Warning');
+        $console->format('Notice: Warning');
+        $console->newline();
+    }
 }
 
 (new Test())->testColoredOutput();
 (new Test())->testConsole();
+(new Test())->testFormatsAnsiString();

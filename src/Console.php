@@ -26,4 +26,16 @@ class Console
 
         return $this;
     }
+
+    /**
+     * Automatically format a log message.
+     * Example: 'Info: Hello World!' becomes '[Info]: Hello World!' with colors.
+     * @internal May be removed in the future.
+     */
+    public function format(string $message): self
+    {
+        $this->line((new FormatsAnsiString($message))->getOutputString());
+
+        return $this;
+    }
 }
