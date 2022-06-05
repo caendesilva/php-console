@@ -16,6 +16,8 @@ class Test {
         $console->line('Testing colored output...');
 
         foreach (get_class_methods(ColoredOutput::class) as $method) {
+            if ($method === 'ansi') continue;
+
             $console->line($this->$method($method));
         }
 
