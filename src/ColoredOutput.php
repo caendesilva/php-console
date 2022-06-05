@@ -48,4 +48,14 @@ trait ColoredOutput
     {
         return $this->ansi($string, '37');
     }
+
+    protected function gray(string $string): string
+    {
+        return $this->ansi($string, '90');
+    }
+
+    protected function lightGray(string $string): string
+    {
+        return $this->ansi($string, '37');
+    }
 }
