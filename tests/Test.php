@@ -12,12 +12,20 @@ class Test {
     public function testColoredOutput(): void
     {
         $console = new Console();
-
         $console->line('Testing colored output...');
 
-        foreach (get_class_methods(ColoredOutput::class) as $method) {
-            if ($method === 'ansi') continue;
+        $methods = [
+            'black',
+            'red',
+            'green',
+            'yellow',
+            'blue',
+            'magenta',
+            'cyan',
+            'white',
+        ];
 
+        foreach ($methods as $method) {
             $console->line($this->$method($method));
         }
 
