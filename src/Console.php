@@ -2,7 +2,7 @@
 
 namespace Desilva\Console;
 
-class Console
+class Console implements Contracts\Console
 {
     use ColoredOutput;
 
